@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- spirits manipulator -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="spirits">
+
+    <!-- Import spirits urdf file -->
+    <xacro:include filename="$(find spirits_description)/urdf/spirits.urdf" />
+
+    <!-- Import spirits ros2_control description -->
+    <xacro:include filename="$(find spirits_description)/ros2_control/spirits.ros2_control.urdf" />
+
+    <!-- Import all Gazebo-customization elements -->
+    <xacro:include filename="$(find spirits_description)/gazebo/spirits.gazebo.xacro"/>
+
+</robot>

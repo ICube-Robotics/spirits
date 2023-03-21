@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="spirits_srdf" params="name prefix">
+     <group name="${prefix}${name}_arm">
+        <chain base_link="${prefix}spirits_base" tip_link="${prefix}tool0" />
+    </group>
+
+    <group_state name="ready" group="${prefix}${name}_arm">
+        <joint name="${prefix}joint_a1" value="0"/>
+        <joint name="${prefix}joint_a2" value="-0.785"/>
+    </group_state>
+    <virtual_joint child_link="${prefix}spirits_base" name="virtual_joint" parent_frame="world" type="floating"/>
+
+    <disable_collisions link1="${prefix}spirits_base" link2="${prefix}link_0" reason="Adjacent" />
+    <disable_collisions link1="${prefix}spirits_base" link2="${prefix}link_1" reason="Never" />
+    <disable_collisions link1="${prefix}link_0" link2="${prefix}link_1" reason="Adjacent" />
+    <disable_collisions link1="${prefix}link_1" link2="${prefix}tool0" reason="Adjacent" />
+  </xacro:macro>
+</robot>
