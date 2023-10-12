@@ -26,11 +26,17 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name='xacro')]),
             ' ',
             PathJoinSubstitution(
-                [FindPackageShare('spirits_description'), 'urdf', 'spirits.urdf']
+                [FindPackageShare('spirits_description'), 'config', 'spirits.config.xacro']
             ),
         ]
     )
     robot_description = {'robot_description': robot_description_content}
+
+    robot_controllers = PathJoinSubstitution([
+      FindPackageShare('spirits_description'),
+      'config',
+      'controllers.yaml',
+    ])
     
     rviz_config_file = PathJoinSubstitution(
         [FindPackageShare('spirits_description'), 'rviz', 'spirits.rviz']
@@ -50,16 +56,45 @@ def generate_launch_description():
         arguments=['-d', rviz_config_file],
     )
 
-    joint_state_publisher_gui_node = Node(
-        package='joint_state_publisher_gui',
-        executable='joint_state_publisher_gui',
-        name='joint_state_publisher_gui_node',
+    # joint_state_publisher_gui_node = Node(
+    #     package='joint_state_publisher_gui',
+    #     executable='joint_state_publisher_gui',
+    #     name='joint_state_publisher_gui_node',
+    # )
+
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+    )
+
+    robot_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['trajectory_controller'],
+    )
+
+    control_node = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        parameters=[robot_description, robot_controllers],
+        output='both',
+    )
+
+    trajectory_node = Node(
+        package='spirits_nodes',
+        executable='trajectory_node.py',
+        output='both',
     )
 
     nodes = [
+        control_node,
         rviz_node,
         robot_state_pub_node,
-        joint_state_publisher_gui_node,
+        # joint_state_publisher_gui_node,
+        joint_state_broadcaster_spawner,
+        robot_controller_spawner,
+        trajectory_node,
     ]
 
     return LaunchDescription(nodes)

@@ -9,7 +9,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://spirits_description/meshes/bw_base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://spirits_description/meshes/bw_base_color.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
 
@@ -26,7 +26,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://spirits_description/meshes/bras_1.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://spirits_description/meshes/bras_1_color.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
 
@@ -42,7 +42,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://spirits_description/meshes/bras_2.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://spirits_description/meshes/bras_2_color.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
 
@@ -53,40 +53,6 @@
       </geometry>
     </collision>
   </link>
-
-  <link name = "inchworm">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://spirits_description/meshes/inchworm.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://spirits_description/meshes/inchworm.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <link name = "needle">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://spirits_description/meshes/needle.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://spirits_description/meshes/needle.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <link name="tool0"/>
 
 
   <joint name="base2world" type="fixed">
@@ -100,7 +66,7 @@
     <child link="link1"/>
     <origin xyz="0.0 0.0168232 0.0627852" rpy="3.0205411 0.2327037 1.0853922"/>
     <axis xyz="0 0 1"/>
-    <limit velocity="4.8" effort="1" lower="-0.5" upper="0.5" />
+    <limit velocity="4.8" effort="1" lower="-0.6" upper="0.6" />
   </joint>
 
   <joint name="joint2" type="revolute">
@@ -108,28 +74,10 @@
     <child link="link2"/>
     <origin xyz="0.0627852 0.0 0.0481768" rpy="1.3086534 -0.0505738 -1.5572328"/>
     <axis xyz="0 0 1"/>
-    <limit velocity="4.8" effort="1" lower="-0.5" upper="0.5" />
+    <limit velocity="4.8" effort="1" lower="-0.8" upper="0.8" />
   </joint>
 
-  <joint name="joint3" type="fixed">
-    <parent link="link2"/>
-    <child link="inchworm"/>
-    <origin xyz="0.0496053 0.0 0.0262441" rpy="0 -0.9075717 0.0"/>
-  </joint> 
-
-  <joint name="needle2inchworm" type="prismatic">
-      <origin rpy="0 0 0" xyz="0 0 0.06295"/>
-      <parent link="inchworm"/>
-      <child link="needle"/>
-      <axis xyz="0 0 1"/>
-      <limit velocity="4.8" effort="1" lower="-0.01" upper="0.08" />
-  </joint>
-
-  <joint name="tool02needle" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <parent link="needle"/>
-      <child link="tool0"/>
-      <axis xyz="0 0 0"/>
-  </joint>
+  
 
 </robot>
+
