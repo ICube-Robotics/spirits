@@ -1,1 +1,0 @@
-/home/barbe/ws_develop/ethercat_driver_ros2/build/ethercat_msgs/rosidl_typesupport_introspection_cpp/ethercat_msgs/srv/detail/set_sdo__rosidl_typesupport_introspection_cpp.hpp

@@ -1,1 +1,0 @@
-/home/barbe/ws_develop/ethercat_driver_ros2/build/ethercat_msgs/rosidl_cmake/srv/GetSdo_Request.msg

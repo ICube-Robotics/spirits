@@ -1,1 +1,0 @@
-/home/barbe/ws_develop/ethercat_driver_ros2/build/ethercat_msgs/rosidl_generator_cpp/ethercat_msgs/srv/detail/get_sdo__traits.hpp
