@@ -1,0 +1,1 @@
+/home/barbe/ws_develop/ethercat_driver_ros2/build/ethercat_msgs/rosidl_generator_py/ethercat_msgs/__init__.py

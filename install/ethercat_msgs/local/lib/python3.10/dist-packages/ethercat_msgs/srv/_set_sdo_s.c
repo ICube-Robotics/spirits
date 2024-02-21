@@ -1,0 +1,1 @@
+/home/barbe/ws_develop/ethercat_driver_ros2/build/ethercat_msgs/rosidl_generator_py/ethercat_msgs/srv/_set_sdo_s.c
