@@ -1,7 +1,0 @@
-{
-  "package_name": "ethercat_msgs",
-  "non_idl_tuples": [
-    "/home/barbe/ws_develop/ethercat_driver_ros2/ethercat_msgs:srv/SetSdo.srv",
-    "/home/barbe/ws_develop/ethercat_driver_ros2/ethercat_msgs:srv/GetSdo.srv"
-  ]
-}

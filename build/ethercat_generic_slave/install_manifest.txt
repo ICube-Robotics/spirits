@@ -1,3 +1,0 @@
-/home/barbe/ws_develop/ethercat_driver_ros2/install/ethercat_generic_slave/lib/libethercat_generic_slave.so
-/home/barbe/ws_develop/ethercat_driver_ros2/install/ethercat_generic_slave/share/ethercat_generic_slave/cmake/export_ethercat_generic_slaveExport.cmake
-/home/barbe/ws_develop/ethercat_driver_ros2/install/ethercat_generic_slave/share/ethercat_generic_slave/cmake/export_ethercat_generic_slaveExport-release.cmake

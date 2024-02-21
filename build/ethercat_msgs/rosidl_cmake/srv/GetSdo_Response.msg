@@ -1,5 +1,0 @@
-
-bool success
-string sdo_return_message
-string sdo_return_value_string
-float64 sdo_return_value
